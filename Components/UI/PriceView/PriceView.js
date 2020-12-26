@@ -12,7 +12,7 @@ export default ({pricing,onflag}) => {
                onflag && {
                    color: onflag,
                }
-            }>{pricing && pricing.price &&  pricing.price + " €" || "New Price is loading..."}</Title>
+            }>{pricing && pricing.price &&  pricing.price || "New Price is loading..."}</Title>
         </Container>
     )
 };

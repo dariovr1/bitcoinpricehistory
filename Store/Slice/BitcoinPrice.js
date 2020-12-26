@@ -4,6 +4,7 @@ import {
     createSlice,
     createAsyncThunk,
   } from "@reduxjs/toolkit";
+  import {toEuro} from '../../Components/helper/common';
   
   const initialState = {
     price : null,
@@ -38,8 +39,8 @@ const bitcoinprice = createSlice({
         // Add reducers for additional action types here, and handle loading state as needed
         [getPrice.fulfilled]: (state, {payload}) => {
           // Add user to the state array
-          console.log("current price is ", payload.EUR.last );
-          state.price = payload.EUR.last;
+          console.log("current price is ", toEuro(payload.EUR.last));
+          state.price = toEuro(payload.EUR.last);
           return state;
         }
       }
